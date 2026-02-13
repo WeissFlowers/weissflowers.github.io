@@ -4,8 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel {
+            display: flex;
+            position: relative;
+            flex-wrap: nowrap;
+            overflow-x: hidden;
+            overflow-y: visible;
+            background-color: whitesmoke;
+            border-width: .25vw;
+            border-style: dashed;
+            border-color: gray;
+            align-items: center;
+            min-width: 100%;
+        }
+        .project_section {
+            display: none;
+            min-width: 100%;
+            padding: 1vw;
+        }
+        .project_section.active {
+            display: flex !important;
+            flex-direction: row;
+        }
+        .project_section .section_col {
+            width: 50%;
+            margin: auto;
+        }
+        /* .project_body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+        .project_body h1 {
+            font-size: 4vw;
+            text-align: center;
+        }
+        .project_body p {
+            font-size: 2vw;
+            text-align: center;
+        }
+        .project_body li {
+            font-size: 2vw;
+        }
+        .project_body a {
+            display: block;
+            font-size: 2vw;
+            text-align: center;
+        }
+        @media (max-width: 800px) {
+            .carousel {
+                flex-direction: column;
+                border: none;
+            }
+            .carousel_controls {
+                display: none;
+            }
+            .carousel_indicators {
+                display: none !important;
+            }
+            .project_section {
+                display: flex;
+                min-width: 100%;
+                padding: 1vh;
+                margin-bottom: 5vh;
+                /* flex-direction: column !important; */
+            }
+        }
+        .carousel_controls {
+            position: absolute;
+            min-width: 100%;
+            top: 50%;
+        }
+        .carousel_controls *{
+            position: absolute;
+            height: 7vh;
+            font-size: 5vh;
+        }
+        .carousel_indicators {
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            min-width: 100%;
+            top: 95%;
+        }
+        .indicator {
+            width: 2vw;
+            background-color: gray;
+            opacity: .5;
+            margin: auto;
+        }
+        .indicator.active {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="construction_message">
+        <h1>Portfolio Under Construction</h1>
+    </div>
+    <div class="carousel">
+        <div class="carousel_controls">
+            <button style="left:0;" onclick="prev_project()"><</button>
+            <button style="right:0;" onclick="next_project()">></button>
+        </div>
+        <div class="carousel_indicators">
+            <div class="indicator">--</div>
+            <div class="indicator">--</div>
+            <div class="indicator">--</div>
+        </div>
+        <div class="project_section">
+            <img class="section_col" src="/Pictures/PingSocial/showcase.png" alt="">
+            <div class="project_body section_col">
+                <h1>Ping Social</h1>
+                <p>Social media website prototype based on Twitter.</p>
+                <p>Created using NodeJS, MongoDB, SocketIO</p>
+                <p>Google oAuth for logins</p>
+                <p>Features: Realtime Notifications, Online Status Tracking, Team Accounts</p>
+                <a href="/ping_social.html">See Full Project Details</a>
+            </div>
+        </div>
+        <div class="project_section">
+            <img class="section_col" src="Pictures/Soundboard/showcase.png" alt="">
+            <div class="project_body section_col">
+                <h1>Soundboard</h1>
+                <p>Prototype web app that acts as a soundboard</p>
+                <p>Created using NodeJS, Voicemeeter</p>
+                <p>Features: Playing audio through virtual microphone, Recording desktop audio using circular queue, Adding downloaded audio to soundboard</p>
+                <a href="/soundboard.html">See Full Project Details</a>
+            </div>
+        </div>
+        <!-- <div class="project_section">
+            <img class="section_col" src="https://placehold.co/600x400/000000/FFF" alt="">
+            <div class="project_body section_col">
+                <h1>Livestream Graphics</h1>
+                <p>Protoype system for adding graphics to OBS livestreams</p>
+                <p>Created using NodeJS, SocketIO, animeJS</p>
+                <p>Very early stages</p>
+                <a href="/livestream_graphics.html">See Full Project Details</a>
+            </div>
+        </div> -->
+    </div>
+
+    <script>
+        var projects = document.getElementsByClassName("project_section")
+        var indicators = document.getElementsByClassName("indicator")
+        var active_project = 0
+        projects[active_project].classList.add("active")
+        indicators[active_project].classList.add("active")
+
+        function prev_project() {
+            projects[active_project].classList.remove("active")
+            indicators[active_project].classList.remove("active")
+            console.log("BEFORE:", active_project)
+            if(active_project == 0){
+                active_project = projects.length-1
+            } else {
+                active_project = active_project-1
+            }
+            console.log("AFTER: ", active_project)
+            projects[active_project].classList.add("active")
+            indicators[active_project].classList.add("active")
+        }
+        function next_project() {
+            projects[active_project].classList.remove("active")
+            indicators[active_project].classList.remove("active")
+            console.log("BEFORE:", active_project)
+            if(active_project == projects.length-1){
+                active_project = 0
+            } else {
+                active_project = active_project+1
+            }
+            console.log("AFTER: ", active_project)
+            projects[active_project].classList.add("active")
+            indicators[active_project].classList.add("active")
+        }
+    </script>
 </body>
 </html>

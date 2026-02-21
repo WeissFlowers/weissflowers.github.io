@@ -9,6 +9,57 @@
 <body>
     <div class="construction_message">
         <h1>Portfolio Under Construction</h1>
-    </div>    
+    </div>
+    <h2>TODO: Add screenshots of various features, code, and Technologies</h2>
+    <h4>Technologies Used</h4>
+    <dl>
+        <dt>NodeJS</dt>
+        <dd>- Central programming language and framework for creating the desktop webapp</dd>
+
+        <dt>Electron</dt>
+        <dd>- Allows for webpage to be used as a desktop webapp</dd>
+        <dd>- Looking for a more lightweight option</dd>
+
+        <dt>Voicemeeter</dt>
+        <dd>- 3rd party software that allows for creation of a virtual microphone</dd>
+        <dd>- Any virtual microphone software should work for this program</dd>
+    </dl>
+
+    <h4>Features</h4>
+    <dl>
+        <dt>Play Audio Through Virtual Microphone</dt>
+        <dd>- Allows the user to specify which output device to send the audio through</dd>
+        <dd>- Works with Virtual Microphone software like Voicemeeter to send audio through the virtual microphone</dd>
+
+        <dt>Record Desktop Audio</dt>
+        <dd>- Using Electron's apis, the user can record their desktop audio to create soundboard clips</dd>
+        <dd>- Circular queue allows the user to save the last 1-5 seconds of audio</dd>
+        <dd>-- Audio is then reconstructed in the nodejs program and saved</dd>
+        <dd>- User is also able to live record their desktop audio and save it the same way</dd>
+        <dd>- Clicking the mute button on the element allows for the circular recording to be paused</dd>
+
+        <dt>Add Audio To Soundboard</dt>
+        <dd>- Pressing the + button on the top left allows the creation of new soundboard elements</dd>
+        <dd>- These elements can then have audio files attached to them and given an option element image</dd>
+        <dd>-- The user can then play the soundboard element by either pressing the play button, or change the element to its image version and tap the image</dd>
+
+        <dt>Extendable Soundboard Elements</dt>
+        <dd>- Allows for a way of extending the current code to implement new types of soundboard elements</dd>
+        <dd>-- Some extended elements that I've created this way: Theme Music Element, Quick Clips Element, TTS Element</dd>
+        
+        <dt>Theme Music Element</dt>
+        <dd>- Allows the user to specify theme music that plays in the background whenever they're microphone detects audio</dd>
+        <dd>- The user can change the audio, volume, and whether the audio loops</dd>
+        <dd>- The user can also decide if they wish to listen to the background music as well or only have it play through their microphone</dd>
+        <dd>- Pressing the mute button pauses the feature until it is pressed again</dd>
+
+        <dt>Quick Clips Element</dt>
+        <dd>- Element I created to allow for interfacing with arduino's using the serial port</dd>
+        <dd>- Allows for a physical array of buttons that can be pressed to make the soundboard more easily accessible</dd>
+
+        <dt>TTS</dt>
+        <dd>- Using an admittedly primitive text to speech engine to allow for funny TTS moments</dd>
+        <dd>- The user can only currently change the text to be spoken, not the model or modify any settings</dd>
+    </dl>
 </body>
 </html>

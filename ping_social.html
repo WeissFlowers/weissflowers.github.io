@@ -9,6 +9,54 @@
 <body>
     <div class="construction_message">
         <h1>Portfolio Under Construction</h1>
-    </div>    
+    </div>
+    <h2>TODO: Add screenshots of various features, code, and Technologies</h2>
+    <h4>Technologies Used</h4>
+    <dl>
+        <dt>NodeJS</dt>
+        <dd>- Server Side Language</dd>
+
+        <dt>ExpressJS</dt>
+        <dd>- Website back-end: Routing, Api handling</dd>
+
+        <dt>Handlebars</dt>
+        <dd>- HTML templating language which allows for easy population of common elements</dd>
+
+        <dt>MongoDB</dt>
+        <dd>- NoSQL database</dd>
+        <dd>-- User-Model: Profile picture, display name, username, privacy setting</dd>
+        <dd>-- Team-Model: display name, username, foreign-key for members, privacy setting</dd>
+        <dd>-- Ping-Model: Timestamp, foreign-key for User or Team, foreign-key for replies, likes</dd>
+        <dd>-- Notification-Model: foreign-key for recipient, foreign-key for Ping, foreign-key for user, action taken</dd>
+
+        <dt>SocketIO</dt>
+        <dd>- Facilitates realtime communication</dd>
+        <dd>-- Sends notifications to users in realtime if they are online</dd>
+        <dd>-- Displays online status of users</dd>
+        <dd>-- Keeps track of uptime of users</dd>
+
+        <dt>Google oAuth</dt>
+        <dd>- Allows users to log in using existing google account</dd>
+        <dd>- Users could change their usernames and display names after creating account</dd>
+    </dl>
+
+    <h4>Features</h4>
+    <dl>
+        <dt>Sending "Pings"</dt>
+        <dd>- Our version of tweets, gives the user a way of putting their thoughts and ideas onto the website</dd>
+        <dd>- Can reply to pings to create a thread</dd>
+
+        <dt>Private Account</dt>
+        <dd>- Allows the user to specify if their account is private and makes their pings only visible to followers</dd>
+
+        <dt>Realtime Noticiations</dt>
+        <dd>- SocketIO allows for the server to send notifications to users without the need to refresh the page</dd>
+
+        <dt>Online status Tracking</dt>
+        <dd>- SocketIO keeps track of user uptime so that it can be used for metrics or a 'leaderboard' type system</dd>
+
+        <dt>Team Accounts</dt>
+        <dd>- Works similar to a user account, but all team members can send pings from the account</dd>
+    </dl>
 </body>
 </html>
